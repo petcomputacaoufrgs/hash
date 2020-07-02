@@ -1,2 +1,2 @@
-# hash
-Gerador de hash SHA2
+# Hash
+Gerador de hash SHA2.

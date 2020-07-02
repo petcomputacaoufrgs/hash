@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hash
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hash-deployment
+  namespace: hash
+  labels:
+    app: hash
+spec:
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: hash
+  template:
+    metadata:
+      labels:
+        app: hash
+    spec:
+      containers:
+        - name: hash
+          image: petcompufrgs/hash:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hash-service
+  namespace: hash
+spec:
+  selector:
+    app: hash
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hash-ingress
+  namespace: hash
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+    - host: 'hash.petcomputacao.tk'
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: 'hash-service'
+              servicePort: 80
+---

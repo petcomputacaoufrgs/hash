@@ -1,0 +1,123 @@
+.App {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+}
+
+.App-header 
+.MuiStepper-root {
+  margin-bottom: 25px;
+  background: none;
+  color: white;
+}
+
+.App-header
+.MuiStepLabel-label {
+  color: rgba(254,254,254, 0.8);
+}
+
+.App-header 
+.MuiStepLabel-label.MuiStepLabel-completed {
+  color: rgba(254,254,254, 0.8);
+}
+
+.App-header 
+.MuiStepLabel-label.MuiStepLabel-active {
+  color: white;
+} 
+
+.App-header 
+.MuiStepper-root.MuiStepper-horizontal {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.App
+.form,
+.App
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.App
+.MuiOutlinedInput-notchedOutline {
+  border-color: white;
+}
+
+.App
+.MuiFormLabel-root {
+  color: white;
+}
+
+.App
+.MuiInputBase-root {
+  color: white;
+}
+
+.App
+.MuiFormControl-root.MuiTextField-root {
+  width: 30%;
+  margin-bottom: 16px;
+}
+
+.App
+.MuiButton-outlinedPrimary {
+  color: white;
+  border-color: white;
+}
+
+.App
+.MuiButton-outlinedPrimary :hover{
+  color: #3f51b5;
+}
+
+.App
+.result
+.result-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.App
+.result
+.result-button,
+.App
+.form
+.result-button {
+  margin: 8px;
+}
+
+.App
+.form
+.selection-button {
+  margin: 8px;
+  width: 40% !important;
+}
+
+@media (orientation: portrait) {
+  .App-header 
+  .MuiStepper-root.MuiStepper-horizontal {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  .App
+  .MuiFormControl-root.MuiTextField-root {
+    width: 70%;
+    margin-bottom: 16px;
+  }
+}
